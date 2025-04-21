@@ -1,0 +1,270 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 35 100% 98%;
+    --foreground: 20 40% 20%;
+
+    --card: 30 50% 98%;
+    --card-foreground: 20 40% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 40% 20%;
+
+    --primary: 359 94% 70%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 100% 85%;
+    --secondary-foreground: 20 40% 20%;
+
+    --muted: 30 20% 90%;
+    --muted-foreground: 20 40% 40%;
+
+    --accent: 140 50% 80%;
+    --accent-foreground: 20 40% 20%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 20 30% 85%;
+    --input: 20 30% 85%;
+    --ring: 359 94% 70%;
+
+    --radius: 0.5rem;
+    --theme-transition: 0s;
+  }
+
+  .dark {
+    --background: 20 40% 10%;
+    --foreground: 30 50% 90%;
+
+    --card: 20 40% 15%;
+    --card-foreground: 30 50% 90%;
+
+    --popover: 20 40% 15%;
+    --popover-foreground: 30 50% 90%;
+
+    --primary: 359 94% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 60% 30%;
+    --secondary-foreground: 30 50% 90%;
+
+    --muted: 20 40% 20%;
+    --muted-foreground: 30 50% 70%;
+
+    --accent: 140 30% 30%;
+    --accent-foreground: 30 50% 90%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 20 40% 25%;
+    --input: 20 40% 25%;
+    --ring: 359 94% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  .theme-transition * {
+    transition:
+      background-color var(--theme-transition) ease-in-out,
+      border-color var(--theme-transition) ease-in-out,
+      color var(--theme-transition) ease-in-out,
+      fill var(--theme-transition) ease-in-out,
+      stroke var(--theme-transition) ease-in-out,
+      box-shadow var(--theme-transition) ease-in-out !important;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23f5d0fe' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-satisfy;
+  }
+
+  .cursive {
+    @apply font-dancing-script;
+  }
+
+  .handwritten {
+    @apply font-caveat;
+  }
+
+  /* Animation classes */
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .slide-up {
+    animation: slideUp 0.5s ease-in-out;
+  }
+
+  .slide-in-left {
+    animation: slideInLeft 0.5s ease-in-out;
+  }
+
+  .slide-in-right {
+    animation: slideInRight 0.5s ease-in-out;
+  }
+
+  .pulse {
+    animation: pulse 2s infinite;
+  }
+
+  .float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .scale-in {
+    animation: scaleIn 0.5s ease-in-out;
+  }
+
+  /* Hover animations */
+  .hover-lift {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-5px);
+  }
+
+  .hover-glow {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 15px rgba(255, 100, 100, 0.5);
+    transform: translateY(-2px);
+  }
+
+  /* Keyframes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Text animations */
+  .animated-text {
+    background: linear-gradient(90deg, var(--primary), #ff9580, var(--primary));
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textGradient 5s linear infinite;
+  }
+
+  @keyframes textGradient {
+    to {
+      background-position: 200% center;
+    }
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus animations */
+  input:focus,
+  textarea:focus {
+    animation: focusPulse 0.5s ease-in-out;
+  }
+
+  @keyframes focusPulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 100, 100, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(255, 100, 100, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 100, 100, 0);
+    }
+  }
+}
